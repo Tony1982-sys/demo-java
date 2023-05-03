@@ -5,7 +5,7 @@ pipeline {
         
         stage('Checkout') {
             steps {
-                echo 'checking out'
+                git 'https://github.com/Tony1982-sys/demo-java.git'
                 
             }
         }
@@ -13,7 +13,7 @@ pipeline {
          stage('Compiling') {
             steps {
           
-                echo 'compiling'
+                mvn 'compile'
         
             }
             
@@ -21,13 +21,13 @@ pipeline {
          stage('Testing') {
             steps {
                
-                echo 'testing'
+                mvn 'test'
             }
         }
          stage('Package') {
             steps {
                 
-                echo 'packaging'
+                mvn 'package'
             }
         }
          stage('Docker build') {
