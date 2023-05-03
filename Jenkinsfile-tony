@@ -13,7 +13,7 @@ pipeline {
          stage('Compiling') {
             steps {
           
-                mvn 'compile'
+                sh 'mvn compile'
         
             }
             
@@ -21,13 +21,13 @@ pipeline {
          stage('Testing') {
             steps {
                
-                mvn 'test'
+                sh 'mvn test'
             }
         }
          stage('Package') {
             steps {
                 
-                mvn 'package'
+                sh 'mvn package'
             }
         }
          stage('Docker build') {
