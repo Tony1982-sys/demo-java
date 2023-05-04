@@ -45,7 +45,7 @@ pipeline {
         stage('Docker push') {
             steps {
               
-                echo 'docker push tonybas1982/demo:${JOB_NAME}-${BUILD_NUMBER}'
+                sh 'docker push tonybas1982/demo:${JOB_NAME}-${BUILD_NUMBER}'
             }
         }
     }
